@@ -1,0 +1,47 @@
+<h2>bitExchange 项目范围拆分</h2>
+<p class="subtitle">这个需求很大，建议先确定 MVP 边界，再逐步扩展到完整多端互传。</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">建议演进路线</div>
+    <div class="mockup-body">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:stretch;">
+        <div class="placeholder" style="min-height:150px;padding:16px;">
+          <div class="label">阶段 1</div>
+          <h3>桌面 MVP</h3>
+          <p>Windows / Linux 客户端，局域网发现，点对点消息与文件传输。</p>
+        </div>
+        <div class="placeholder" style="min-height:150px;padding:16px;">
+          <div class="label">阶段 2</div>
+          <h3>信令服务</h3>
+          <p>公网服务器上线注册、端点交换、跨网打洞尝试。</p>
+        </div>
+        <div class="placeholder" style="min-height:150px;padding:16px;">
+          <div class="label">阶段 3</div>
+          <h3>移动与 Web</h3>
+          <p>Android APK、Web 页面入口，账号/设备配对与权限处理。</p>
+        </div>
+        <div class="placeholder" style="min-height:150px;padding:16px;">
+          <div class="label">阶段 4</div>
+          <h3>性能与发布</h3>
+          <p>满速传输优化、加密选项、GitHub Actions 多平台打包。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="options">
+  <div class="option" data-choice="desktop-mvp" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content"><h3>先做桌面 MVP</h3><p>最快验证核心传输能力；手机和 Web 后续补上。</p></div>
+  </div>
+  <div class="option" data-choice="full-architecture-first" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content"><h3>先设计完整架构</h3><p>一次把多端、信令、安全、打包都定清楚，再拆实现阶段。</p></div>
+  </div>
+  <div class="option" data-choice="mobile-first" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content"><h3>手机优先</h3><p>先保证 Android 与桌面互传；权限和后台运行会更复杂。</p></div>
+  </div>
+</div>

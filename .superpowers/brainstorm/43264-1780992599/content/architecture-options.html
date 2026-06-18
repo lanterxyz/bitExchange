@@ -1,0 +1,66 @@
+<h2>bitExchange 架构路线对比</h2>
+<p class="subtitle">基于你选择的方向：完整多端架构、无账号配对、允许可关闭中继、Web 轻量、信令端到端加密、性能优先、同一人可信设备、借鉴 Syncthing 原理。</p>
+
+<div class="cards">
+  <div class="card" data-choice="recommended" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">方案 A：高性能核心 + 多端壳层（推荐）</div>
+        <div class="mockup-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center;">
+            <div class="placeholder">Windows/Linux<br>桌面 UI</div>
+            <div class="placeholder">Android UI</div>
+            <div class="placeholder">Web 轻量页</div>
+          </div>
+          <div style="text-align:center;margin:12px 0;">↓ 调用统一核心协议/传输库 ↓</div>
+          <div class="placeholder">Go/Rust Core：发现、配对、加密、P2P/Relay、文件块传输</div>
+          <div style="text-align:center;margin:12px 0;">↔</div>
+          <div class="placeholder">Signaling/Relay Server：上线、端点交换、可选中继</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 高性能核心 + 多端壳层</h3>
+      <p>核心能力统一，桌面/Android/Web 只做平台适配；性能和长期维护最平衡。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="syncthing-fork" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">方案 B：基于 Syncthing 二改</div>
+        <div class="mockup-body">
+          <div class="placeholder">Syncthing 发现/中继/传输/同步模型</div>
+          <div style="text-align:center;margin:12px 0;">↓ 大量改造 ↓</div>
+          <div class="placeholder">聊天式发送、群发、粘贴文件、移动端/Web 适配</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. 基于 Syncthing 改造</h3>
+      <p>能借到成熟传输经验，但同步模型和聊天式互传差异大，改造成本和耦合高。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="web-first" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">方案 C：Web/Electron 优先</div>
+        <div class="mockup-body">
+          <div class="placeholder">Electron/Tauri/Web UI</div>
+          <div style="text-align:center;margin:12px 0;">↓</div>
+          <div class="placeholder">JS/Node 传输 + WebRTC + Server Relay</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. Web 技术优先</h3>
+      <p>界面开发快，但局域网扫描、后台保存、满速大文件传输和移动端权限更受限。</p>
+    </div>
+  </div>
+</div>
+
+<div class="pros-cons">
+  <div class="pros"><h4>推荐 A 的原因</h4><ul><li>传输核心可直接针对满速优化</li><li>桌面、Android、Web 能共享协议和安全模型</li><li>保留借鉴 Syncthing 原理的空间，不被同步模型绑死</li></ul></div>
+  <div class="cons"><h4>主要代价</h4><ul><li>初期工程拆分比单框架更复杂</li><li>需要明确 FFI/本地服务/API 边界</li><li>多平台打包需要较早规划 CI</li></ul></div>
+</div>

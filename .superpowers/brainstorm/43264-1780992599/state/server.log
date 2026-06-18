@@ -1,0 +1,4 @@
+{"type":"server-started","port":60229,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:60229","screen_dir":"/home/newnew/bitExchange/.superpowers/brainstorm/43264-1780992599/content","state_dir":"/home/newnew/bitExchange/.superpowers/brainstorm/43264-1780992599/state"}
+{"type":"screen-added","file":"/home/newnew/bitExchange/.superpowers/brainstorm/43264-1780992599/content/architecture-options.html"}
+{"source":"user-event","type":"click","text":"方案 A：高性能核心 + 多端壳层（推荐）\n        \n          \n            Windows/Linux桌面 UI\n            Android UI\n            Web 轻量页\n          \n          ↓ 调用统一核心协议/传输库 ↓\n          Go/Rust Core：发现、配对、加密、P2P/Relay、文件块传输\n          ↔\n          Signaling/Relay Server：上线、端点交换、可选中继\n        \n      \n    \n    \n      A. 高性能核心 + 多端壳层\n      核心能力统一，桌面/Android/Web 只做平台适配；性能和长期维护最平衡。","choice":"recommended","id":null,"timestamp":1780992796756}
+{"type":"server-stopped","reason":"idle timeout"}

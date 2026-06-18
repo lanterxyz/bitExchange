@@ -1,0 +1,77 @@
+<h2>桌面端主界面布局</h2>
+<p class="subtitle">玻璃拟态深空风。左设备列表、中聊天/传输流、右任务面板，底部输入区。请确认整体骨架。</p>
+
+<div class="mockup">
+  <div class="mockup-header" style="background:linear-gradient(135deg,#0f0c29,#302b63);color:#a78bfa;">bitExchange — 深空玻璃拟态</div>
+  <div class="mockup-body" style="background:linear-gradient(135deg,#0f0c29,#302b63);padding:0;">
+    <div style="display:grid;grid-template-columns:240px 1fr 220px;grid-template-rows:1fr 130px;height:480px;gap:1px;background:rgba(255,255,255,0.08);">
+
+      <!-- 左：设备列表 -->
+      <div style="background:rgba(255,255,255,0.04);padding:14px;backdrop-filter:blur(10px);overflow:auto;">
+        <div style="color:#a78bfa;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">在线设备</div>
+        <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(167,139,250,0.4);padding:10px;border-radius:8px;margin-bottom:8px;">
+          <div style="color:#fff;font-weight:600;font-size:13px;">桌面A</div>
+          <div style="color:rgba(255,255,255,0.6);font-size:11px;margin-top:3px;">LAN · 12.4MB/s</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:10px;border-radius:8px;margin-bottom:8px;">
+          <div style="color:#fff;font-weight:600;font-size:13px;">笔记本B</div>
+          <div style="color:rgba(255,255,255,0.5);font-size:11px;margin-top:3px;">P2P · 8.1MB/s</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:10px;border-radius:8px;">
+          <div style="color:#fff;font-weight:600;font-size:13px;">手机C</div>
+          <div style="color:rgba(255,255,255,0.5);font-size:11px;margin-top:3px;">Relay · 2.0MB/s</div>
+        </div>
+      </div>
+
+      <!-- 中：聊天/传输流 -->
+      <div style="background:rgba(15,12,41,0.5);padding:14px;overflow:auto;display:flex;flex-direction:column;gap:10px;">
+        <div style="align-self:flex-end;background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;padding:10px 14px;border-radius:14px 14px 4px 14px;max-width:70%;font-size:13px;">明天的会议改到下午3点</div>
+        <div style="background:rgba(255,255,255,0.08);padding:10px 14px;border-radius:14px 14px 14px 4px;max-width:70%;font-size:13px;color:#fff;">
+          <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-bottom:4px;">桌面A · 文件</div>
+          📄 项目方案.pdf · 2.3MB · 已保存到 receivedFiles/
+        </div>
+        <div style="align-self:flex-end;background:rgba(255,255,255,0.08);padding:10px 14px;border-radius:14px;border:1px dashed rgba(167,139,250,0.4);max-width:70%;font-size:12px;color:rgba(255,255,255,0.7);">
+          → 笔记本B、手机C · 群发中 · 2/2 完成
+        </div>
+      </div>
+
+      <!-- 右：任务面板 -->
+      <div style="background:rgba(255,255,255,0.04);padding:14px;backdrop-filter:blur(10px);overflow:auto;">
+        <div style="color:#a78bfa;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">传输任务</div>
+        <div style="background:rgba(255,255,255,0.06);padding:10px;border-radius:8px;margin-bottom:8px;">
+          <div style="color:#fff;font-size:12px;">视频.mp4 → 笔记本B</div>
+          <div style="background:rgba(0,0,0,0.3);height:4px;border-radius:2px;margin:6px 0;overflow:hidden;">
+            <div style="background:#a78bfa;height:100%;width:67%;"></div>
+          </div>
+          <div style="color:rgba(255,255,255,0.5);font-size:10px;">67% · 9.2MB/s · P2P</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);padding:10px;border-radius:8px;">
+          <div style="color:#fff;font-size:12px;">文档.docx → 手机C</div>
+          <div style="background:rgba(0,0,0,0.3);height:4px;border-radius:2px;margin:6px 0;overflow:hidden;">
+            <div style="background:#34d399;height:100%;width:100%;"></div>
+          </div>
+          <div style="color:#34d399;font-size:10px;">完成 · Relay</div>
+        </div>
+      </div>
+
+      <!-- 底部输入区（横跨三列） -->
+      <div style="grid-column:1 / -1;background:rgba(255,255,255,0.06);padding:14px;display:flex;gap:10px;align-items:center;backdrop-filter:blur(10px);">
+        <div style="flex:1;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:10px 14px;color:rgba(255,255,255,0.6);font-size:13px;">输入消息，或拖入/粘贴文件...</div>
+        <button style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:8px 14px;border-radius:8px;font-size:12px;">📎 文件</button>
+        <button style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:8px 14px;border-radius:8px;font-size:12px;">🔒 加密</button>
+        <button style="background:linear-gradient(135deg,#7c3aed,#a78bfa);border:none;color:#fff;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:600;">发送 →</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:18px;">
+  <p class="subtitle">关键交互：</p>
+  <ul style="color:#ccc;line-height:1.7;">
+    <li>左侧设备可多选（高亮 + 勾选），实现群发</li>
+    <li>底部输入框支持拖拽/粘贴文件，自动转成文件任务</li>
+    <li>右侧任务面板实时刷新进度，来自 SSE 流</li>
+    <li>加密按钮默认关闭，切换后影响本次发送</li>
+  </ul>
+</div>
