@@ -37,13 +37,13 @@ jobs:
           go-version: '1.24'
 
       - name: Build server
-        run: GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} go build -o bitexchange-server${{ matrix.suffix }} ./cmd/bitexchange-server
+        run: go env -w GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} && go build -o bitexchange-server${{ matrix.suffix }} ./cmd/bitexchange-server && go env -u GOOS GOARCH
 
       - name: Build CLI
-        run: GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} go build -o bitexchange-cli${{ matrix.suffix }} ./cmd/bitexchange-cli
+        run: go env -w GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} && go build -o bitexchange-cli${{ matrix.suffix }} ./cmd/bitexchange-cli && go env -u GOOS GOARCH
 
       - name: Build core
-        run: GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} go build -o bitexchange-core${{ matrix.suffix }} ./cmd/bitexchange-core
+        run: go env -w GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} && go build -o bitexchange-core${{ matrix.suffix }} ./cmd/bitexchange-core && go env -u GOOS GOARCH
 
       - name: Run tests
         if: matrix.goos == 'linux' && matrix.goarch == 'amd64'
